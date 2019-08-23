@@ -1,0 +1,410 @@
+openapi: "3.0.0"
+info:
+  version: 0.0.8
+  title: API de pagamento
+  contact:
+    name: APIPagamento
+    url: https://www.tecnospeed.com.br
+servers:
+  - url: https://foyp1f2cj1.execute-api.us-east-1.amazonaws.com/production
+    description: Servidor de produção
+
+paths:
+  /pagamentos:
+    get:
+      summary: Listar os pagamentos cadastrado
+      tags:
+        - Pagamentos
+      parameters:
+        - name: idIntegracao
+          in: query
+          description: O idIntegracao do boleto que será consultado
+          required: true
+          schema:
+            type: string
+            format: uid
+      responses:
+        "200":
+          description: Resposta com os dados do pagamento
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/PagamentoResposta"
+        "400":
+          description: Resposta com os dados do pagamento
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/ValidationError"
+    post:
+      summary: Gerar um pagamento
+      operationId: createPayment
+      tags:
+        - Pagamentos
+      requestBody:
+        description: Body com o conteúdo do pagamento
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/PagamentoBody"
+      responses:
+        "201":
+          description: Resposta com os dados do pagamento
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/PagamentoResposta"
+        "400":
+          description: Resposta com os erros de validação
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/ValidationError"
+  /remessa:
+    get:
+      summary: Consultar remessa
+      tags:
+        - Remessa
+      parameters:
+        - name: protocolo
+          in: path
+          required: true
+          description: Protocolo da remessa
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Resposta com o protocolo e situação do lote da remessa
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/RespostaRemessa"
+        "400":
+          description: Resposta erros de validações
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/ValidationError"
+    post:
+      summary: Gerar uma remessa
+      operationId: postRemessa
+      tags:
+        - Remessa
+      requestBody:
+        description: Body com os pagamentos a ser gerado as remessas
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/requestBodies/RemessaBody"
+      responses:
+        "200":
+          description: Resposta com os dados cadastrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/createRemessaResponse"
+        "400":
+          description: Resposta com os dados cadastrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/ValidationError"
+  /cadastro:
+    post:
+      summary: Cadastrar um usuário (Debitado)
+      operationId: postCadastro
+      tags:
+        - Cadastro
+      requestBody:
+        description: Body com os dados do usuário
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Cadastro"
+      responses:
+        "201":
+          description: Resposta com os dados cadastrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/cadastroResponse"
+
+        "400":
+          description: Resposta com os dados cadastrado
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/response/ValidationError"
+
+components:
+  requestBodies:
+    RemessaBody:
+      type: array
+      items:
+        type: object
+        properties:
+          idIntegracao:
+            type: string
+          tipoMovimento:
+            type: string
+    PagamentoBody:
+      type: object
+      required: true
+      properties:
+        favorecido:
+          $ref: "#/components/schemas/Favorecido"
+        tipoPagamento:
+          type: string
+        formaPagamento:
+          type: string
+        conta:
+          type: string
+        dataPagamento:
+          type: string
+        valorPagamento:
+          type: string
+        codigoBarrasBancoFavorecido:
+          type: string
+        codigoBarrasMoeda:
+          type: string
+        dataVencimento:
+          type: string
+        codigoBarrasDv:
+          type: string
+        codigoBarrasFatorVencimento:
+          type: string
+        codigoBarrasValor:
+          type: string
+        codigoBarrasCampoLivre:
+          type: string
+        valorDescontoAbatimento:
+          type: string
+        valorMoraMulta:
+          type: string
+        codigoBarras:
+          type: string
+        numeroControle:
+          type: string
+  response:
+
+    cadastroResponse:
+      type: object
+      properties:
+        nome:
+          type: string
+          example: TESTE S.A
+        cpfCnpj:
+          type: string
+          example: TESTE S.A
+        endereco:
+          $ref: "#/components/schemas/Endereco"
+        contas:
+          type: array
+          items:
+            type: object
+            properties:
+              agencia:
+                type: string
+              numConta:
+                type: string
+              estado:
+                type: string
+              codBanco:
+                type: string
+              dac:
+                type: string
+              hash:
+                type: string
+              transmissaoVan: 
+                type: boolean
+      
+    createRemessaResponse:
+      type: object
+      properties:
+        protocolo:
+          type: string
+          example: GMYDGZRTGFSWIMBZGU3A
+        situacao:
+          type: string
+          example: PROCESSANDO
+
+    PagamentoResposta:
+      type: array
+      items:
+        $ref: "#/components/schemas/Pagamento"
+
+    RespostaRemessa:
+      type: object
+      properties:
+        protocolo:
+          type: string
+          example: 5d5ec851e6fc1b2f64c6c6d4
+        situacao:
+          type: string
+          example: PROCESSADO
+          enum: [PROCESSADO, PROCESSANDO, FALHA]
+        remessas:
+          type: array
+          items:
+            $ref: "#/components/schemas/Remessa"
+    ValidationError:
+      type: object
+      properties:
+        message:
+          type: string
+        errors:
+          type: array
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+              message:
+                type: string
+
+    UnexpectedError:
+      description: Erro inesperado no processamento da aplicação
+      content:
+        application/json:
+        schema:
+        type: object
+        required:
+          - message
+          - errors
+        properties:
+          message:
+            type: string
+          errors:
+            type: array
+            items:
+              type: object
+              properties:
+                message:
+                  type: string
+  schemas:
+    Endereco:
+      type: object
+      properties:
+        cidade:
+          type: string
+        cep:
+          type: string
+        estado:
+          type: string
+        logradouro:
+          type: string
+        numLogradouro:
+          type: string
+
+    Conta:
+      type: object
+      properties:
+        agencia:
+          type: string
+        numConta:
+          type: string
+        estado:
+          type: string
+        codBanco:
+          type: string
+        dac:
+          type: string
+
+    Cadastro:
+      type: object
+      properties:
+        nome:
+          type: string
+          example: TESTE S.A
+        cpfCnpj:
+          type: string
+          example: TESTE S.A
+        endereco:
+          $ref: "#/components/schemas/Endereco"
+        contas:
+          type: array
+          items:
+            $ref: "#/components/schemas/Conta"
+    Remessa:
+      type: object
+      properties:
+        pagamentos:
+          type: array
+          items:
+            type: string
+            example: GMYDGZRTGFSWIMBZGU3A
+        envio:
+          type: string
+          example: VAN
+        situacao:
+          type: string
+          example: ENVIANDO
+        nomenclatura:
+          type: string
+          example: PAG_341_40473_220819_1.rem
+        hashConta:
+          type: string
+          example: MRRGGZJRGQ4WI
+        remessa:
+          type: string
+          example: zQxMDAwMDAgICAgICAwODExMDAxMDExMTEwMDIxMTMgICAgICAgIC==
+
+    Pagamento:
+      type: object
+      required:
+        - status
+        - data
+      properties:
+        favorecido:
+          $ref: "#/components/schemas/Favorecido"
+        tipoPagamento:
+          type: string
+        formaPagamento:
+          type: string
+        conta:
+          type: string
+        dataPagamento:
+          type: string
+        valorPagamento:
+          type: string
+        codigoBarrasBancoFavorecido:
+          type: string
+        codigoBarrasMoeda:
+          type: string
+        dataVencimento:
+          type: string
+        codigoBarrasDv:
+          type: string
+        codigoBarrasFatorVencimento:
+          type: string
+        codigoBarrasValor:
+          type: string
+        codigoBarrasCampoLivre:
+          type: string
+        valorDescontoAbatimento:
+          type: string
+        valorMoraMulta:
+          type: string
+        codigoBarras:
+          type: string
+        numeroControle:
+          type: string
+        idIntegracao:
+          type: string
+        situacao:
+          type: string
+
+    Favorecido:
+      type: object
+      properties:
+        nome:
+          type: string
+        cpfCnpj:
+          type: string
+        agencia:
+          type: string
+        numConta:
+          type: string
