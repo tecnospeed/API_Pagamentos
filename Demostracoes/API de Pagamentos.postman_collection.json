@@ -1,1185 +1,10 @@
 {
 	"info": {
-		"_postman_id": "ed4bbb10-2420-4ceb-99c9-9c18eecd1b99",
+		"_postman_id": "5524b4da-4707-4f8d-b0fe-ef340369df06",
 		"name": "API de Pagamentos",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Homologação",
-			"item": [
-				{
-					"name": "Pagamentos de Taxas",
-					"item": [
-						{
-							"name": "Pagamento de Taxas - Gare",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"amount\": 1.50,\r\n  \"description\": \"Pagamento da GARE\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"dueDate\": \"2019-12-20\",\r\n  \"stateRegistration\": \"PR\",\r\n  \"activeDebit\": \"123\",\r\n  \"referencePeriod\": \"2019-12\",\r\n  \"installment\": \"01\",\r\n  \"interestAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"nominalAmount\": 1.50,\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/taxes/gare",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"taxes",
-										"gare"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamento de taxas - IPVA",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"description\": \"Pagamento de IPVA\",\r\n  \"nominalAmount\": 1.50,\r\n  \"contributorName\": \"João Homologacao\",\r\n  \"calculationYear\": \"2019\",\r\n  \"amount\": \"1.50\",\r\n  \"dueDate\": \"2019-12-20\",\r\n  \"municipalCode\": \"4115200\",\r\n  \"discountAmount\": 0,\r\n  \"state\": \"PR\",\r\n  \"vehiclePlates\": \"AAA0000\",\r\n  \"paymentOption\": 1,\r\n  \"vehicleRenavam\": \"aaaaaaaaaa\",\r\n  \"CRVLWithdrawalOption\": 1,\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/taxes/ipva",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"taxes",
-										"ipva"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamento de taxas - DPVAT",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"description\": \"Pagamento de DPVAT\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"contributorName\": \"Joao Homologacao\",\r\n  \"calculationYear\": \"2019\",\r\n  \"amount\": 1.50,\r\n  \"city\": \"Maringa\",\r\n  \"state\": \"PR\",\r\n  \"vehiclePlates\": \"AAA0000\",\r\n  \"paymentOption\": 1,\r\n  \"vehicleRenavam\": \"aaaaaaaaaa\",\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/taxes/dpvat",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"taxes",
-										"dpvat"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamento de taxas - DARF",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"description\": \"Pagamento da DARF\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"contributorName\": \"Homologacao\",\r\n  \"referencePeriod\": \"122019\",\r\n  \"reportingPeriod\": \"01122019\",\r\n  \"referenceNumber\": \"123\",\r\n  \"interestAmount\": 1.0,\r\n  \"fineAmount\": 0,\r\n  \"nominalAmount\": 0,\r\n  \"dueDate\": \"2019-12-30\",\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/taxes/darf",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"taxes",
-										"darf"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamento de taxas - GPS",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"amount\": 1.50,\r\n  \"nominalAmount\":\"1.50\",\r\n  \"description\": \"Pagamento da GPS\",\r\n  \"referencePeriod\": \"122019\",\r\n  \"taxAmount\": \"0\",\r\n  \"otherAmount\": 0,\r\n  \"monetaryAdjustment\": 0,\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/taxes/gps",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"taxes",
-										"gps"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Pagamentos Gerais",
-					"item": [
-						{
-							"name": "Pagamento de Boletos/Bloquetos",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"accountHash\": \"8MsOxGFsZh\",\r\n    \"description\":\"Pagamento de Boletos e Bloquetos\",\r\n    \"paymentForm\": \"30\",\r\n    \"nominalAmount\": 1.50,\r\n    \"ourNumber\": \"1002\",\r\n    \"paymentDate\": \"2019-09-20\",\r\n    \"amount\": 1.50,    \r\n    \"barcode\": \"34193808200000001011090000366261234123451000\",\r\n    \"beneficiary\": {\r\n        \"name\": \"BENEFICIARIO TESTE\",\r\n        \"cpfCnpj\": \"13201437000135\"\r\n    },\r\n    \"dueDate\": \"2019-09-20\",\r\n    \"tag\" : [\"teste\"]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/billet",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"billet"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamentos por Transferências",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamento via Transferencia\",\r\n  \"paymentForm\": 0,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/transfer",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"transfer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamento de Salários",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamento de Salários\",\r\n  \"paymentForm\": 0,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/paycheck",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"paycheck"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Pagamentos Diversos",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "payercpfcnpj",
-										"type": "text",
-										"value": "01001001000113"
-									},
-									{
-										"key": "tokenSh",
-										"type": "text",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
-									},
-									{
-										"key": "cnpjSh",
-										"type": "text",
-										"value": "01001001000113"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamentos diversos\",\r\n  \"paymentForm\": 31,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payment/various",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payment",
-										"various"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Contas",
-					"item": [
-						{
-							"name": "Cadastrando Conta",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"TESTES\",\r\n  \"status\": 1,\r\n  \"cpfCnpj\": \"04834027000130\",\r\n  \"accounts\": [\r\n    {\r\n      \"remessaSequential\": 13,\r\n      \"bankCode\": \"341\",\r\n      \"agency\": \"03799\",\r\n      \"agencyDigit\": \"\",\r\n      \"accountNumber\": \"00040885\",\r\n      \"accountNumberDigit\": \"\",\r\n      \"accountDac\": \"3\",\r\n      \"convenioNumber\": \"22\",\r\n      \"accountHash\": \"8MsOxGFsZh\"\r\n    }\r\n  ],\r\n  \"neighborhood\": \"DUQUE DE CAXIAS\",\r\n  \"addressNumber\": \"882\",\r\n  \"city\": \"MARINGA\",\r\n  \"state\": \"PR\",\r\n  \"zipcode\": \"87020025\",\r\n  \"softwareHouse\": {\r\n    \"cnpj\": \"01001001000113\",\r\n    \"token\": \"CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i\",\r\n    \"license\": {\r\n      \"status\": 1,\r\n      \"validatedAt\": {\r\n        \"$date\": \"2019-11-07T17:50:27.384+0000\"\r\n      }\r\n    }\r\n  }\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Alterando Contas",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name\": \"Tecnospeed\",\r\n\t\"email\": \"contato@tecnospeed.com.br\",\r\n\t\"street\": \"Av. Duque de Caxias\",\r\n\t\"neighborhood\": \"Zona 01\",\r\n\t\"addressNumber\": \"882\",\r\n\t\"addressComplement\": \"\",\r\n\t\"city\": \"MARINGA\",\r\n\t\"state\": \"PR\",\r\n\t\"zipcode\": \"87020025\"\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Consultando Contas",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Pagadores",
-					"item": [
-						{
-							"name": "Cadastrando o Pagador",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"TESTES\",\r\n    \"cpfCnpj\": \"01001001000113\",\r\n    \"neighborhood\": \"DUQUE DE CAXIAS\",\r\n    \"addressNumber\": \"882\",\r\n    \"zipcode\": \"87020025\",\r\n    \"state\": \"PR\",\r\n    \"city\": \"MARINGA\",\r\n    \"accounts\": [\r\n        {\r\n            \"bankCode\": \"341\",\r\n            \"agency\": \"03799\",\r\n            \"agencyDigit\": \"\",\r\n            \"accountNumber\": \"000000040885\",\r\n            \"accountNumberDigit\": \"\",\r\n            \"accountDac\": \"3\",\r\n            \"convenioNumber\": \"22\",\r\n            \"remessaSequential\": \"1\"\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Consultar Pagador",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "payercpfcnpj",
-										"value": "01001001000113",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Notificacao",
-					"item": [
-						{
-							"name": "Cadastrando Notificação",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"type\": \"webhook\", \r\n\t\"headers\": \"teste\",\r\n\t\"happen\": [\"CREATED\",\"PAID\",\"SCHEDULED\",\"CANCELLED\",\"REJECTED\",\"REFUNDED\"],\r\n\t\"url\": \"https://webhook.site/0c782321-2d22-4d32-807b-8409d0b53a61\"\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Consultando Notificação",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Apagando Notiricação",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									},
-									{
-										"key": "payercpfcnpj",
-										"value": " 000000000",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"uniqueId\": [\"IHKBXX\"]\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Alterando Notificação",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									},
-									{
-										"key": "payercpfcnpj",
-										"value": " 00000000000",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"uniqueId\": \"IHKBXX\",\r\n\t\"type\": \"webhook\",\t\r\n\t\"happen\": [\"PAID\"],\r\n\t\"url\": \"https://webhook.site/0c782321-2d22-4d32-807b-8409d0b53a61\"\r\n}"
-								},
-								"url": {
-									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"staging",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Consultando o Protocolo da Geremessa",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "payercpfcnpj",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "tokenSh",
-								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "cnpjSh",
-								"value": "01001001000113",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://staging.pagamentobancario.com.br/api/v1/remittance/w0l2KxWioy0fbNSjPAWrM",
-							"protocol": "https",
-							"host": [
-								"staging",
-								"pagamentobancario",
-								"com",
-								"br"
-							],
-							"path": [
-								"api",
-								"v1",
-								"remittance",
-								"w0l2KxWioy0fbNSjPAWrM"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Consultando o pagamento",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "payercpfcnpj",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "cnpjSh",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "tokenSh",
-								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://staging.pagamentobancario.com.br/api/v1/payment?uniqueId=_UIYZY8QHA",
-							"protocol": "https",
-							"host": [
-								"staging",
-								"pagamentobancario",
-								"com",
-								"br"
-							],
-							"path": [
-								"api",
-								"v1",
-								"payment"
-							],
-							"query": [
-								{
-									"key": "uniqueId",
-									"value": "_UIYZY8QHA"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Consulta protocolo do retorno",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "payercpfcnpj",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "tokenSh",
-								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							},
-							{
-								"key": "cnpjSh",
-								"value": "01001001000113",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://staging.pagamentobancario.com.br/api/v1/reconciliation/y8LMVo2vlU6",
-							"protocol": "https",
-							"host": [
-								"staging",
-								"pagamentobancario",
-								"com",
-								"br"
-							],
-							"path": [
-								"api",
-								"v1",
-								"reconciliation",
-								"y8LMVo2vlU6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Gerando a Remessa",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "payercpfcnpj",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "tokenSh",
-								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "cnpjSh",
-								"value": "01001001000113",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"payments\": [\r\n    \"_UIYZY8QHA\"\r\n  ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "https://staging.pagamentobancario.com.br/api/v1/remittance",
-							"protocol": "https",
-							"host": [
-								"staging",
-								"pagamentobancario",
-								"com",
-								"br"
-							],
-							"path": [
-								"api",
-								"v1",
-								"remittance"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Enviando o retorno",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "payercpfcnpj",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "tokenSh",
-								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							},
-							{
-								"key": "cnpjSh",
-								"value": "01001001000113",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/C:/Users/guilherme.ganassin/Downloads/Gustavo Fiorin.png"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://staging.pagamentobancario.com.br/api/v1/reconciliation",
-							"protocol": "https",
-							"host": [
-								"staging",
-								"pagamentobancario",
-								"com",
-								"br"
-							],
-							"path": [
-								"api",
-								"v1",
-								"reconciliation"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
 		{
 			"name": "Produção",
 			"item": [
@@ -1223,13 +48,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/taxes/gare",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/gare",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1279,13 +105,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/taxes/ipva",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/ipva",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1335,13 +162,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/taxes/dpvat",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/dpvat",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1386,13 +214,14 @@
 									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"description\": \"Pagamento da DARF\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"contributorName\": \"Homologacao\",\r\n  \"referencePeriod\": \"122019\",\r\n  \"reportingPeriod\": \"01122019\",\r\n  \"referenceNumber\": \"123\",\r\n  \"interestAmount\": 1.0,\r\n  \"fineAmount\": 0,\r\n  \"nominalAmount\": 0,\r\n  \"dueDate\": \"2019-12-30\",\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}"
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/taxes/darf",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/darf",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1437,13 +266,14 @@
 									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"amount\": 1.50,\r\n  \"nominalAmount\":\"1.50\",\r\n  \"description\": \"Pagamento da GPS\",\r\n  \"referencePeriod\": \"122019\",\r\n  \"taxAmount\": \"0\",\r\n  \"otherAmount\": 0,\r\n  \"monetaryAdjustment\": 0,\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}"
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/taxes/gps",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/gps",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1500,13 +330,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/billet",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/billet",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1550,13 +381,14 @@
 									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamento via Transferencia\",\r\n  \"paymentForm\": 0,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}"
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/transfer",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/transfer",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1605,13 +437,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/paycheck",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/paycheck",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1660,13 +493,14 @@
 									}
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payment/various",
-									"protocol": "https",
+									"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment/various",
+									"protocol": "http",
 									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
+										"ecs-pagamento-api-777030523",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
 									],
 									"path": [
 										"api",
@@ -1683,173 +517,46 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Contas",
+					"name": "Extrato",
 					"item": [
 						{
-							"name": "Cadastrando Conta",
+							"name": "Enviar extrato",
 							"request": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "cnpjsh",
-										"value": " 01001001000113",
+										"value": "xxxxxxxxxxxxxxxx",
 										"type": "text"
 									},
 									{
 										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
+										"value": "xxxxxxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxxxxxx",
 										"type": "text"
 									},
 									{
 										"key": "Content-Type",
-										"value": " application/json",
+										"value": "multipart/form-data",
 										"type": "text"
 									}
 								],
 								"body": {
-									"mode": "raw",
-									"raw": "{\r\n  \"name\": \"TESTES\",\r\n  \"status\": 1,\r\n  \"cpfCnpj\": \"04834027000130\",\r\n  \"accounts\": [\r\n    {\r\n      \"remessaSequential\": 13,\r\n      \"bankCode\": \"341\",\r\n      \"agency\": \"03799\",\r\n      \"agencyDigit\": \"\",\r\n      \"accountNumber\": \"00040885\",\r\n      \"accountNumberDigit\": \"\",\r\n      \"accountDac\": \"3\",\r\n      \"convenioNumber\": \"22\",\r\n      \"accountHash\": \"8MsOxGFsZh\"\r\n    }\r\n  ],\r\n  \"neighborhood\": \"DUQUE DE CAXIAS\",\r\n  \"addressNumber\": \"882\",\r\n  \"city\": \"MARINGA\",\r\n  \"state\": \"PR\",\r\n  \"zipcode\": \"87020025\",\r\n  \"softwareHouse\": {\r\n    \"cnpj\": \"01001001000113\",\r\n    \"token\": \"CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i\",\r\n    \"license\": {\r\n      \"status\": 1,\r\n      \"validatedAt\": {\r\n        \"$date\": \"2019-11-07T17:50:27.384+0000\"\r\n      }\r\n    }\r\n  }\r\n}"
-								},
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Alterando Contas",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"name\": \"Tecnospeed\",\r\n\t\"email\": \"contato@tecnospeed.com.br\",\r\n\t\"street\": \"Av. Duque de Caxias\",\r\n\t\"neighborhood\": \"Zona 01\",\r\n\t\"addressNumber\": \"882\",\r\n\t\"addressComplement\": \"\",\r\n\t\"city\": \"MARINGA\",\r\n\t\"state\": \"PR\",\r\n\t\"zipcode\": \"87020025\"\r\n}"
-								},
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Consultando Contas",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payer",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"payer"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Pagadores",
-					"item": [
-						{
-							"name": "Cadastrando o Pagador",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"TESTES\",\r\n    \"cpfCnpj\": \"01001001000113\",\r\n    \"neighborhood\": \"DUQUE DE CAXIAS\",\r\n    \"addressNumber\": \"882\",\r\n    \"zipcode\": \"87020025\",\r\n    \"state\": \"PR\",\r\n    \"city\": \"MARINGA\",\r\n    \"accounts\": [\r\n        {\r\n            \"bankCode\": \"341\",\r\n            \"agency\": \"03799\",\r\n            \"agencyDigit\": \"\",\r\n            \"accountNumber\": \"000000040885\",\r\n            \"accountNumberDigit\": \"\",\r\n            \"accountDac\": \"3\",\r\n            \"convenioNumber\": \"22\",\r\n            \"remessaSequential\": \"1\"\r\n        }\r\n    ]\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
 										}
-									}
+									]
 								},
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payer",
+									"raw": "https://api.pagamentobancario.com.br/api/v1/statement/parser",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -1860,41 +567,36 @@
 									"path": [
 										"api",
 										"v1",
-										"payer"
+										"statement",
+										"parser"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Consultar Pagador",
+							"name": "Consultar Extrato",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
-										"key": "cnpjSh",
-										"value": "01001001000113",
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
 										"type": "text"
 									},
 									{
-										"key": "tokenSh",
-										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"name": "Content-Type",
-										"value": "application/json",
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
 										"type": "text"
 									},
 									{
 										"key": "payercpfcnpj",
-										"value": "01001001000113",
+										"value": "xxxxxxxxxxxx",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/payer",
+									"raw": "https://api.pagamentobancario.com.br/api/v1/statement/parser/xxxxx",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -1905,7 +607,9 @@
 									"path": [
 										"api",
 										"v1",
-										"payer"
+										"statement",
+										"parser",
+										"xxxxx"
 									]
 								}
 							},
@@ -1916,197 +620,62 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Notificacao",
-					"item": [
-						{
-							"name": "Cadastrando Notificação",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"type\": \"webhook\", \r\n\t\"headers\": \"teste\",\r\n\t\"happen\": [\"CREATED\",\"PAID\",\"SCHEDULED\",\"CANCELLED\",\"REJECTED\",\"REFUNDED\"],\r\n\t\"url\": \"https://webhook.site/0c782321-2d22-4d32-807b-8409d0b53a61\"\r\n}"
-								},
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
+					"name": "Cadastrando o Pagador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
 							},
-							"response": []
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TESTES\",\r\n    \"cpfCnpj\": \"01001001000113\",\r\n    \"neighborhood\": \"DUQUE DE CAXIAS\",\r\n    \"addressNumber\": \"882\",\r\n    \"zipcode\": \"87020025\",\r\n    \"state\": \"PR\",\r\n    \"city\": \"MARINGA\",\r\n    \"accounts\": [\r\n        {\r\n            \"bankCode\": \"341\",\r\n            \"agency\": \"03799\",\r\n            \"agencyDigit\": \"\",\r\n            \"accountNumber\": \"000000040885\",\r\n            \"accountNumberDigit\": \"\",\r\n            \"accountDac\": \"3\",\r\n            \"convenioNumber\": \"22\",\r\n            \"remessaSequential\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"name": "Consultando Notificação",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Apagando Notiricação",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									},
-									{
-										"key": "payercpfcnpj",
-										"value": " 000000000",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"uniqueId\": [\"IHKBXX\"]\r\n}"
-								},
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Alterando Notificação",
-							"request": {
-								"method": "PUT",
-								"header": [
-									{
-										"key": "cnpjsh",
-										"value": " 01001001000113",
-										"type": "text"
-									},
-									{
-										"key": "tokensh",
-										"value": " CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8i",
-										"type": "text"
-									},
-									{
-										"key": "Content-Type",
-										"value": " application/json",
-										"type": "text"
-									},
-									{
-										"key": "payercpfcnpj",
-										"value": " 00000000000",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"uniqueId\": \"IHKBXX\",\r\n\t\"type\": \"webhook\",\t\r\n\t\"happen\": [\"PAID\"],\r\n\t\"url\": \"https://webhook.site/0c782321-2d22-4d32-807b-8409d0b53a61\"\r\n}"
-								},
-								"url": {
-									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
-									"protocol": "https",
-									"host": [
-										"api",
-										"pagamentobancario",
-										"com",
-										"br"
-									],
-									"path": [
-										"api",
-										"v1",
-										"notification"
-									]
-								}
-							},
-							"response": []
+						"url": {
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payer",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payer"
+							]
 						}
-					],
-					"protocolProfileBehavior": {},
-					"_postman_isSubFolder": true
+					},
+					"response": []
 				},
 				{
-					"name": "Consultando o Protocolo da Geremessa",
+					"name": "Consultar Pagador",
 					"request": {
 						"method": "GET",
 						"header": [
 							{
-								"key": "payercpfcnpj",
+								"key": "cnpjSh",
 								"value": "01001001000113",
 								"type": "text"
 							},
@@ -2122,25 +691,25 @@
 								"type": "text"
 							},
 							{
-								"key": "cnpjSh",
+								"key": "payercpfcnpj",
 								"value": "01001001000113",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "https://api.pagamentobancario.com.br/api/v1/remittance/w0l2KxWioy0fbNSjPAWrM",
-							"protocol": "https",
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payer",
+							"protocol": "http",
 							"host": [
-								"api",
-								"pagamentobancario",
-								"com",
-								"br"
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
 							],
 							"path": [
 								"api",
 								"v1",
-								"remittance",
-								"w0l2KxWioy0fbNSjPAWrM"
+								"payer"
 							]
 						}
 					},
@@ -2174,13 +743,14 @@
 							}
 						],
 						"url": {
-							"raw": "https://api.pagamentobancario.com.br/api/v1/payment?uniqueId=_UIYZY8QHA",
-							"protocol": "https",
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/payment?uniqueId=_UIYZY8QHA",
+							"protocol": "http",
 							"host": [
-								"api",
-								"pagamentobancario",
-								"com",
-								"br"
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
 							],
 							"path": [
 								"api",
@@ -2192,52 +762,6 @@
 									"key": "uniqueId",
 									"value": "_UIYZY8QHA"
 								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Consulta protocolo do retorno",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "payercpfcnpj",
-								"value": "01001001000113",
-								"type": "text"
-							},
-							{
-								"key": "tokenSh",
-								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
-								"type": "text"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							},
-							{
-								"key": "cnpjSh",
-								"value": "01001001000113",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://api.pagamentobancario.com.br/api/v1/reconciliation/y8LMVo2vlU6",
-							"protocol": "https",
-							"host": [
-								"api",
-								"pagamentobancario",
-								"com",
-								"br"
-							],
-							"path": [
-								"api",
-								"v1",
-								"reconciliation",
-								"y8LMVo2vlU6"
 							]
 						}
 					},
@@ -2280,18 +804,66 @@
 							}
 						},
 						"url": {
-							"raw": "https://api.pagamentobancario.com.br/api/v1/remittance",
-							"protocol": "https",
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/remittance",
+							"protocol": "http",
 							"host": [
-								"api",
-								"pagamentobancario",
-								"com",
-								"br"
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
 							],
 							"path": [
 								"api",
 								"v1",
 								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultando o Protocolo da Geremessa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/remittance/w0l2KxWioy0fbNSjPAWrM",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"remittance",
+								"w0l2KxWioy0fbNSjPAWrM"
 							]
 						}
 					},
@@ -2335,18 +907,1036 @@
 							]
 						},
 						"url": {
-							"raw": "https://api.pagamentobancario.com.br/api/v1/reconciliation",
-							"protocol": "https",
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/reconciliation",
+							"protocol": "http",
 							"host": [
-								"api",
-								"pagamentobancario",
-								"com",
-								"br"
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
 							],
 							"path": [
 								"api",
 								"v1",
 								"reconciliation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta protocolo do retorno",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com/api/v1/reconciliation/y8LMVo2vlU6",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-777030523",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reconciliation",
+								"y8LMVo2vlU6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Homologação",
+			"item": [
+				{
+					"name": "Pagamentos de Taxas",
+					"item": [
+						{
+							"name": "Pagamento de Taxas - Gare",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"amount\": 1.50,\r\n  \"description\": \"Pagamento da GARE\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"dueDate\": \"2019-12-20\",\r\n  \"stateRegistration\": \"PR\",\r\n  \"activeDebit\": \"123\",\r\n  \"referencePeriod\": \"2019-12\",\r\n  \"installment\": \"01\",\r\n  \"interestAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"nominalAmount\": 1.50,\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/gare",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"taxes",
+										"gare"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamento de taxas - IPVA",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"description\": \"Pagamento de IPVA\",\r\n  \"nominalAmount\": 1.50,\r\n  \"contributorName\": \"João Homologacao\",\r\n  \"calculationYear\": \"2019\",\r\n  \"amount\": \"1.50\",\r\n  \"dueDate\": \"2019-12-20\",\r\n  \"municipalCode\": \"4115200\",\r\n  \"discountAmount\": 0,\r\n  \"state\": \"PR\",\r\n  \"vehiclePlates\": \"AAA0000\",\r\n  \"paymentOption\": 1,\r\n  \"vehicleRenavam\": \"aaaaaaaaaa\",\r\n  \"CRVLWithdrawalOption\": 1,\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/ipva",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"taxes",
+										"ipva"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamento de taxas - DPVAT",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"description\": \"Pagamento de DPVAT\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"contributorName\": \"Joao Homologacao\",\r\n  \"calculationYear\": \"2019\",\r\n  \"amount\": 1.50,\r\n  \"city\": \"Maringa\",\r\n  \"state\": \"PR\",\r\n  \"vehiclePlates\": \"AAA0000\",\r\n  \"paymentOption\": 1,\r\n  \"vehicleRenavam\": \"aaaaaaaaaa\",\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/dpvat",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"taxes",
+										"dpvat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamento de taxas - DARF",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"description\": \"Pagamento da DARF\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"contributorName\": \"Homologacao\",\r\n  \"referencePeriod\": \"122019\",\r\n  \"reportingPeriod\": \"01122019\",\r\n  \"referenceNumber\": \"123\",\r\n  \"interestAmount\": 1.0,\r\n  \"fineAmount\": 0,\r\n  \"nominalAmount\": 0,\r\n  \"dueDate\": \"2019-12-30\",\r\n  \"tags\": [\r\n    \"teste\"\r\n  ]\r\n}"
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/darf",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"taxes",
+										"darf"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamento de taxas - GPS",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"contributorDocument\": \"93848368005\",\r\n  \"paymentDate\": \"2019-12-20\",\r\n  \"amount\": 1.50,\r\n  \"nominalAmount\":\"1.50\",\r\n  \"description\": \"Pagamento da GPS\",\r\n  \"referencePeriod\": \"122019\",\r\n  \"taxAmount\": \"0\",\r\n  \"otherAmount\": 0,\r\n  \"monetaryAdjustment\": 0,\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}"
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/taxes/gps",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"taxes",
+										"gps"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Pagamentos Gerais",
+					"item": [
+						{
+							"name": "Pagamento de Boletos/Bloquetos",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"accountHash\": \"8MsOxGFsZh\",\r\n    \"description\":\"Pagamento de Boletos e Bloquetos\",\r\n    \"paymentForm\": \"30\",\r\n    \"nominalAmount\": 1.50,\r\n    \"ourNumber\": \"1002\",\r\n    \"paymentDate\": \"2019-09-20\",\r\n    \"amount\": 1.50,    \r\n    \"barcode\": \"34193808200000001011090000366261234123451000\",\r\n    \"beneficiary\": {\r\n        \"name\": \"BENEFICIARIO TESTE\",\r\n        \"cpfCnpj\": \"13201437000135\"\r\n    },\r\n    \"dueDate\": \"2019-09-20\",\r\n    \"tag\" : [\"teste\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/billet",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"billet"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamentos por Transferências",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamento via Transferencia\",\r\n  \"paymentForm\": 0,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}"
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/transfer",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"transfer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamento de Salários",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"value": "01001001000113",
+										"type": "text"
+									},
+									{
+										"key": "tokenSh",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "cnpjSh",
+										"value": "01001001000113",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamento de Salários\",\r\n  \"paymentForm\": 0,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/paycheck",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"paycheck"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Pagamentos Diversos",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "payercpfcnpj",
+										"type": "text",
+										"value": "01001001000113"
+									},
+									{
+										"key": "tokenSh",
+										"type": "text",
+										"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "cnpjSh",
+										"type": "text",
+										"value": "01001001000113"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountHash\": \"8MsOxGFsZh\",\r\n  \"description\": \"Pagamentos diversos\",\r\n  \"paymentForm\": 31,\r\n  \"paymentDate\": \"2019-11-12\",\r\n  \"amount\": 1.50,\r\n  \"rebateAmount\": 0,\r\n  \"interestAmount\": 0,\r\n  \"discountAmount\": 0,\r\n  \"fineAmount\": 0,\r\n  \"beneficiary\": {\r\n    \"name\": \"Teste Beneficiario\",\r\n    \"cpfCnpj\": \"38947633000184\",\r\n    \"bankCode\": \"001\",\r\n    \"agency\": \"1111\",\r\n    \"agencyDigit\": \"2\",\r\n    \"accountNumber\": \"3333\",\r\n    \"accountNumberDigit\": \"3\",\r\n    \"accountDac\": \"4\",\r\n    \"neighborhood\": \"Rua Teste\",\r\n    \"addressNumber\": \"123\",\r\n    \"addressComplement\": \"\",\r\n    \"city\": \"Maringa\",\r\n    \"state\": \"PR\",\r\n    \"zipcode\": \"87000000\"\r\n  },\r\n  \"tags\": [\r\n    \"string\"\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment/various",
+									"protocol": "http",
+									"host": [
+										"ecs-pagamento-api-staging-916485757",
+										"us-east-1",
+										"elb",
+										"amazonaws",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"payment",
+										"various"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Extrato",
+					"item": [
+						{
+							"name": "Enviar extrato",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/statement/parser",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"statement",
+										"parser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar Extrato",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/statement/parser/xxxxx",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"statement",
+										"parser",
+										"xxxxx"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Cadastrando o Pagador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"TESTES\",\r\n    \"cpfCnpj\": \"01001001000113\",\r\n    \"neighborhood\": \"DUQUE DE CAXIAS\",\r\n    \"addressNumber\": \"882\",\r\n    \"zipcode\": \"87020025\",\r\n    \"state\": \"PR\",\r\n    \"city\": \"MARINGA\",\r\n    \"accounts\": [\r\n        {\r\n            \"bankCode\": \"341\",\r\n            \"agency\": \"03799\",\r\n            \"agencyDigit\": \"\",\r\n            \"accountNumber\": \"000000040885\",\r\n            \"accountNumberDigit\": \"\",\r\n            \"accountDac\": \"3\",\r\n            \"convenioNumber\": \"22\",\r\n            \"remessaSequential\": \"1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payer",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Pagador",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payer",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultando o pagamento",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/payment?uniqueId=_UIYZY8QHA",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payment"
+							],
+							"query": [
+								{
+									"key": "uniqueId",
+									"value": "_UIYZY8QHA"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gerando a Remessa",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"payments\": [\r\n    \"_UIYZY8QHA\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/remittance",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"remittance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultando o Protocolo da Geremessa",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/remittance/w0l2KxWioy0fbNSjPAWrM",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"remittance",
+								"w0l2KxWioy0fbNSjPAWrM"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Enviando o retorno",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/guilherme.ganassin/Downloads/Gustavo Fiorin.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/reconciliation",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reconciliation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta protocolo do retorno",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "payercpfcnpj",
+								"value": "01001001000113",
+								"type": "text"
+							},
+							{
+								"key": "tokenSh",
+								"value": "CdEZhJcQJS9rRdkLnx2Kl67GhAeBx89X2hzgVQ8ia",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "cnpjSh",
+								"value": "01001001000113",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://ecs-pagamento-api-staging-916485757.us-east-1.elb.amazonaws.com/api/v1/reconciliation/y8LMVo2vlU6",
+							"protocol": "http",
+							"host": [
+								"ecs-pagamento-api-staging-916485757",
+								"us-east-1",
+								"elb",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reconciliation",
+								"y8LMVo2vlU6"
 							]
 						}
 					},
@@ -2380,10 +1970,9 @@
 	],
 	"variable": [
 		{
-			"id": "cf9d1ea2-cb2f-45e8-807a-4f1a8417b177",
+			"id": "6be2e83e-4d0e-40b4-986c-e3c4ce880599",
 			"key": "url",
-			"value": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com",
-			"type": "string"
+			"value": "http://ecs-pagamento-api-777030523.us-east-1.elb.amazonaws.com"
 		}
 	],
 	"protocolProfileBehavior": {}
