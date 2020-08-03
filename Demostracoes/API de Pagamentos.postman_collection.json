@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "5524b4da-4707-4f8d-b0fe-ef340369df06",
-		"name": "API de Pagamentos",
+		"_postman_id": "acb00423-e48d-481a-8c9a-cdd84fd8a43f",
+		"name": "API de Pagamentos Copy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -610,6 +610,208 @@
 										"statement",
 										"parser",
 										"xxxxx"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "Criar notification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"type\": \"webhook\",\r\n\t\"email\": \"tecno@tecnospeed.com.br\",\r\n\t\"cc\": \"emai@gmail.com\",\t\r\n\t\"happen\": [\"CREATED\",\"PAID\",\"SCHEDULED\",\"CANCELLED\",\"REJECTED\",\"REFUNDED\", \"STATEMENT\"],\r\n\t\"url\": \"https://webhook/\",\r\n\t\"headers\": {}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"api",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar notifications",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"api",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar notification",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"type\": \"webhook\",\r\n\t\"email\": \"tecno@tecnospeed.com.br\",\r\n\t\"cc\": \"emai@gmail.com\",\t\r\n\t\"happen\": [\"CREATED\",\"PAID\",\"SCHEDULED\",\"CANCELLED\",\"REJECTED\",\"REFUNDED\", \"STATEMENT\"],\r\n\t\"url\": \"https://webhook/\",\r\n\t\"headers\": {}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"api",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detelhe notification",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"uniqueId\": [\"XVDTSU\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
 									]
 								}
 							},
@@ -1590,6 +1792,208 @@
 					"_postman_isSubFolder": true
 				},
 				{
+					"name": "notification",
+					"item": [
+						{
+							"name": "Criar notification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"type\": \"webhook\",\r\n\t\"email\": \"tecno@tecnospeed.com.br\",\r\n\t\"cc\": \"emai@gmail.com\",\t\r\n\t\"happen\": [\"CREATED\",\"PAID\",\"SCHEDULED\",\"CANCELLED\",\"REJECTED\",\"REFUNDED\", \"STATEMENT\"],\r\n\t\"url\": \"https://webhook/\",\r\n\t\"headers\": {}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar notifications",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Alterar notification",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"type\": \"webhook\",\r\n\t\"email\": \"tecno@tecnospeed.com.br\",\r\n\t\"cc\": \"emai@gmail.com\",\t\r\n\t\"happen\": [\"CREATED\",\"PAID\",\"SCHEDULED\",\"CANCELLED\",\"REJECTED\",\"REFUNDED\", \"STATEMENT\"],\r\n\t\"url\": \"https://webhook/\",\r\n\t\"headers\": {}\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detelhe notification",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "cnpjsh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "tokensh",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									},
+									{
+										"key": "payercpfcnpj",
+										"value": "xxxxxxxxxxxx",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"uniqueId\": [\"XVDTSU\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://staging.pagamentobancario.com.br/api/v1/notification",
+									"protocol": "https",
+									"host": [
+										"staging",
+										"pagamentobancario",
+										"com",
+										"br"
+									],
+									"path": [
+										"api",
+										"v1",
+										"notification"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "Cadastrando o Pagador",
 					"request": {
 						"method": "POST",
@@ -1950,7 +2354,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8a87be50-dd13-4240-994a-e7d8d7bab1b0",
+				"id": "91410600-b1cd-49ae-8cbc-9cd513326d97",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1960,7 +2364,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "4b2571a7-d6a8-431e-bc47-e5e77f970594",
+				"id": "515c86f9-c573-45dc-8d3e-f511e589e843",
 				"type": "text/javascript",
 				"exec": [
 					""
