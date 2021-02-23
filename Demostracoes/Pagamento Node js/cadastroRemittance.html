@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Cadastro de remessa</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="cnpjsh" placeholder="cnpj Software House" id="cnpjsh">
+            <label>Cnpj-SH</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="tokensh" placeholder="token Software House" id="tokensh">
+            <label>Token-SH</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="payercpfcnpj" placeholder="payer cpf/cnpj" id="payercpfcnpj">
+            <label>Cpf/Cnpj do pagador</label>
+          </div>
+          <div class="user-box">
+            <textarea id="txtJason" name="txtJason"rows="20" cols="42"></textarea>
+            <label>JSON</label>
+          </div>
+          <a href="#" onclick=postRemittance() type="submit">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            cadastrar
+          </a>
+          <div class="user-box">
+            <h3>Resposta:</h3>
+            <textarea id="response" rows="15" cols="42"></textarea>
+          </div>
+        </form>
+      </div>
+</body>
+<script type="text/javascript" src="functions.js"></script>
+</html>
