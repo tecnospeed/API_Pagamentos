@@ -18,7 +18,7 @@ paths:
       parameters:
         - name: idIntegracao
           in: query
-          description: O idIntegracao do boleto que será consultado
+          description: O idIntegracao do pagamento a ser consultado
           required: true
           schema:
             type: string
